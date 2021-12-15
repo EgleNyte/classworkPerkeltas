@@ -1,0 +1,182 @@
+
+/*--figuru vietos--*/
+
+/*--div {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+.static {
+    font-size: 30px;
+    background-color: grey;
+}
+.absolute {
+    font-size: 30px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    background-color: hotpink;
+}
+.relative {
+    font-size: 30px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    background-color: yellow;
+}
+.fixed {
+    font-size: 30px;
+    position: fixed;
+    top: 150px;
+    left: 500px;
+    background-color: cornflowerblue;
+    display: block;
+}
+.super {
+    width: 200px;
+    height: 200px;
+    background-color: darkgreen;
+    position: relative;
+    top: 70px;
+    left: 200px;
+}
+.last {
+    background-color: purple;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}--*/
+
+/*--layout and media queries--*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 10% auto 8%;
+    grid-template-columns: 15% auto 15%;
+    grid-gap: 25px;
+    grid-template-areas:
+        'b b b'
+        'a c d'
+        'a e e';
+}
+
+.left {
+    grid-area: a;
+    background-color: #f2f2f2;
+}
+
+.header {
+    grid-area: b;
+    background-color: #f2f2f2;
+}
+
+.main {
+    grid-area: c;
+    background-color: #f2f2f2;
+}
+
+.right {
+    grid-area: d;
+    background-color: #f2f2f2;
+}
+
+.footer {
+    grid-area: e;
+    background-color: #f2f2f2;
+}
+/* Extra maži įrenginiai (telefonai, 600px ir žemiau) */
+@media only screen and (max-width: 600px) {
+    body {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 50px auto 50px;
+        grid-template-columns: 3fr;
+        grid-gap: 15px;
+        grid-template-areas:
+        'b'
+        'c'
+        'e';
+    }
+    aside.right, aside.left {
+        display: none;
+    }
+    body > * {
+        padding: 5px;
+    }
+}
+
+/* Maži įrenginiai (statmenos planšetės, ar gulsti telefonai 600px ir aukščiau) */
+@media only screen and (min-width: 600px) {
+    body {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 50px 150px auto 100px 50px;
+        grid-template-columns: 100%;
+        grid-gap: 15px;
+        grid-template-areas:
+        'b'
+        'a'
+        'c'
+        'd'
+        'e';
+    }
+    body > * {
+        padding: 10px;
+    }
+}
+
+/* Vidutiniai įrenginiai (gulsčios planšetės ar maži laptopai, 768px ir aukščiau) */
+@media only screen and (min-width: 768px) {
+    body {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 50px auto 100px 50px;
+        grid-template-columns: 1fr 5fr;
+        grid-gap: 15px;
+        grid-template-areas:
+        'a b'
+        'a c'
+        'a d'
+        'a e'
+    }
+}
+
+/* Dideli įrenginiai (laptopai, staliniai PC, 992px ir aukščiau) */
+@media only screen and (min-width: 992px) {
+    body {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-rows: 50px auto auto 50px;
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-gap: 15px;
+        grid-template-areas:
+        'a b d'
+        'a c d'
+        'a c d'
+        'a e d'
+    }
+    aside.right {
+        display: block;
+    }
+}
+
+/* Extra dideli įrenginiai (dideli laptopai ir stalinai PC, 1200px ir aukščiau) */
+@media only screen and (min-width: 1200px) {
+    body {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 10% auto 8%;
+        grid-template-columns: 15% auto 15%;
+        grid-gap: 25px;
+        grid-template-areas:
+        'b b b'
+        'a c d'
+        'a e e';
+    }
+}

@@ -1,0 +1,19 @@
+/*--practice--*/
+p {
+    color:red;
+}
+li {
+    color:#800042;
+}
+#obuolys {
+    width: 100px;
+    height: 100px;
+}
+
+#obuolys, #arbata, #ausinukai {
+    font-weight: normal;
+}
+
+#CSS, #postgre {
+    color: #e60000;
+}
